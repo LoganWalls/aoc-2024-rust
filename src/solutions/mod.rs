@@ -16,6 +16,7 @@ macro_rules! timed {
 pub trait Solution {
     fn input() -> &'static str;
 
+    #[allow(dead_code)]
     fn example_input() -> &'static str;
 
     fn part1(input: &str) -> Result<usize>;
