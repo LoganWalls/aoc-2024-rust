@@ -1,11 +1,8 @@
-use clap::{Parser, ValueEnum};
+use clap::Parser;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
-pub struct Args {
-    #[arg(value_enum, default_value_t = Command::Run)]
-    pub command: Command,
-
+pub struct Config {
     /// Which day to run
     #[arg(short, long)]
     pub day: usize,
@@ -15,13 +12,7 @@ pub struct Args {
     pub part: usize,
 }
 
-#[derive(ValueEnum, Clone, Debug)]
-pub enum Command {
-    Run,
-    Fetch,
-}
-
-impl Args {
+impl Config {
     pub fn input_path(&self) -> String {
         format!("inputs/day{}-{}.txt", self.day, self.part)
     }
