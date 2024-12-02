@@ -1,4 +1,5 @@
 pub mod day1;
+pub mod day2;
 use aoc::cli;
 
 use anyhow::{anyhow, Result};
