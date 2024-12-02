@@ -30,6 +30,7 @@
             [
               toolchain
               pkgs.rust-analyzer-unwrapped
+              pkgs.nushell
             ]
             ++ lib.optionals stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [
               Security
