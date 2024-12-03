@@ -37,7 +37,7 @@ impl Solution for Day2 {
     fn part2(input: &str) -> anyhow::Result<usize> {
         Ok(input
             .lines()
-            .map(|line| -> usize {
+            .filter(|line| {
                 let levels: Vec<_> = line
                     .split(" ")
                     .map(|x| x.parse::<i32>().expect("item is number"))
@@ -56,9 +56,8 @@ impl Solution for Day2 {
                                     && (a.signum() == b.signum())
                             })
                     })
-                    .into()
             })
-            .sum())
+            .count())
     }
 }
 
