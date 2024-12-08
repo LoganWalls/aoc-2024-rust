@@ -14,6 +14,8 @@ fn main() -> Result<()> {
         3 => solutions::day3::Day3::run(&config),
         4 => solutions::day4::Day4::run(&config),
         5 => solutions::day5::Day5::run(&config),
+        6 => solutions::day6::Day6::run(&config),
+        7 => solutions::day7::Day7::run(&config),
         _ => Err(anyhow!("Day {} not implemented", config.day)),
     }
 }
